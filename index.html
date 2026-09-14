@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gabriel Durazo | Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Gabriel Durazo</h1>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <section class="about fade-in">
+  <div class="about-flex">
+    <div class="about-photo-frame">
+      <img src="images/DURAZO, GABRIEL.jpg" alt="Gabriel Durazo in a flight suit" class="about-photo">
+    </div>
+
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        3rd year Aerospace Engineering student at Illinois Institute of Technology who strives for excellence through leadership and a strong work ethic. Interests in spacecraft propulsion, space exploration, and resource utilization.
+
+I enjoy bridging concepts and applications through simulation, testing, and innovation.
+
+      </p>
+    </div>
+  </div>
+</section>
+
+    <h2>Engineering Portfolio</h2>
+    <p>Building solutions through design, data, and innovation.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <article class="project-card fade-in">
+      <h3>Turbo Jet Engine</h3>
+      <div class="project-flex">
+        <div class="project-media">
+          <img src="images/Jet Enginer Front Angle.png" alt="Turbo Jet Engine Front View">
+          <div id="jet-engine-viewer" class="model-viewer" aria-label="Interactive 3D turbo jet engine model">
+            <p class="model-status">Loading 3D model...</p>
+          </div>
+        </div>
+        <div class="project-description">
+          <p>Designed and modeled a turbojet engine in SOLIDWORKS, analyzing internal flow and mechanical structure. The model includes compressor, combustion, turbine, and nozzle stages, with a variable exhaust cone. This project helped me understand thrust generation, pressure ratios, and the mechanical constraints of rotating assemblies.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card fade-in">
+      <h3>Practice Projects</h3>
+      <div class="project-flex">
+        <div class="project-gallery">
+          <img src="images/Bicycle Wheel.jpg" alt="Bicycle Wheel CAD Model">
+          <img src="images/Guitar.jpg" alt="Acoustic Guitar CAD Model">
+          <img src="images/Rotor (Coil Wiring).jpg" alt="Electric Motor CAD Model">
+        </div>
+        <div class="project-description">
+          <p>A collection of practice CAD models created to refine design and rendering skills in SOLIDWORKS. Includes a bicycle wheel assembly, an acoustic guitar, and an electric motor cross-section.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card fade-in">
+      <h3>Apogee Calculator Simulation</h3>
+      <div class="project-flex">
+        <div class="project-media">
+          <p class="pdf-label">Apogee Model</p>
+          <iframe class="pdf-preview" src="images/ApogeeModel.pdf" title="Apogee calculator model"></iframe>
+          <p class="pdf-label">Initial Calculator Code</p>
+          <iframe class="pdf-preview" src="images/Apogee%20code.pdf" title="Initial apogee calculator code"></iframe>
+          <a class="project-link" href="images/Apogee%20code.pdf" target="_blank" rel="noopener">Open Code PDF in a new tab</a>
+        </div>
+        <div class="project-description">
+          <p>Developed a MATLAB-based six-degree-of-freedom simulation to predict rocket 
+            apogee using thrust curves, aerodynamic drag, and dynamic mass depletion. 
+            The model integrates motor data and OpenRocket aerodynamic coefficients to generate altitude predictions.</p>
+          <a href="images/ApogeeModel.pdf" class="project-link" target="_blank" rel="noopener">View Model PDF</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card fade-in">
+      <h3>Level 1 Rocket Project</h3>
+      <div class="project-flex">
+        <div class="project-media">
+          <img src="images/IMG_8017.PNG" alt="Rocketry team with Level 1 rockets">
+          <video class="project-video" controls preload="metadata">
+            <source src="images/Rocket%20launch.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="project-description">
+          <p>Designed, assembled, and launched a Level 1 high-power rocket certified through the Illinois Institute of Technology Rocketry Team. This project involved stability analysis, center-of-pressure calculations, fin geometry optimization, and recovery system design. The successful flight demonstrated aerodynamic stability and safe recovery.</p>
+        </div>
+      </div>
+
+      <div class="media-gallery">
+        <img src="images/IMG_8499.JPEG" alt="Level 1 rocketry team workshop documentation">
+        <img src="images/IMG_8506.JPEG" alt="Level 1 rocketry team project documentation">
+      </div>
+    </article>
+
+    <article class="project-card fade-in">
+      <h3>IREC Competition Rocket</h3>
+      <div class="project-flex">
+        <div class="project-media">
+          <img src="images/IREQ Data.png" alt="IREC competition rocket data and analysis">
+          <iframe class="pdf-preview" src="images/Open%20Rocket%20Design.pdf" title="OpenRocket IREC competition rocket design"></iframe>
+          <a class="project-link" href="images/Open%20Rocket%20Design.pdf" target="_blank" rel="noopener">Open PDF in a new tab</a>
+        </div>
+        <div class="project-description">
+          <p>Developed an entry for the IREC rocketry competition, applying aerospace design, simulation, and flight-analysis methods to a competition rocket. The project brought together vehicle design, stability planning, propulsion considerations, and data-driven performance evaluation. The OpenRocket model and design documentation are shown alongside the project details.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card fade-in">
+      <h3>Future Engineering Project: Autonomous Drone</h3>
+      <div class="project-flex">
+        <div class="project-placeholder" aria-hidden="true">Project image coming soon</div>
+        <div class="project-description">
+          <p>Planned development of an autonomous drone featuring a lightweight composite frame, brushless motor propulsion, PID-based flight control, and onboard sensor fusion.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="photography" class="photography-section fade-in">
+    <div class="photography-heading">
+      <p class="section-kicker">A different frame of reference</p>
+      <h2>Off the Clock</h2>
+      <p>I notice the minute details of both engineering and daily life.</p>
+    </div>
+
+    <div class="photo-window" aria-label="Sliding photography gallery">
+      <div class="photo-track">
+        <figure class="photo-slide">
+          <img src="images/IMG_2375.JPG" alt="Night traffic light trails in the city">
+          <figcaption>Chicago nights</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_3760.JPG" alt="Nighttime city scene">
+          <figcaption>5:00 storm</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_5962.JPG" alt="Low-light detail study">
+          <figcaption>Chicagohinge</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_7226.JPG" alt="Helmet portrait against a soft sky">
+          <figcaption>Fairy light</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_8557.JPG" alt="Soft pastel sky at dusk">
+          <figcaption>Nolan</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_8132 - Copy.JPG" alt="Rocket rising against a dark sky">
+          <figcaption>Saturn 1B</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_8299 - Copy.JPG" alt="Nighttime bridge detail">
+          <figcaption>Huntsville, AL</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_2640.JPG" alt="Airplane flying across a blue sky">
+          <figcaption>The American Analog Set</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_8469.JPG" alt="Space capsule exhibit in a museum">
+          <figcaption>Casper</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/IMG_8635 - Copy.JPG" alt="Fireworks over a city at night">
+          <figcaption>Concert night</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/$RWZ4I3P.JPG" alt="Motorcycle and city skyline at night">
+          <figcaption>Wildflowers</figcaption>
+        </figure>
+        <figure class="photo-slide">
+          <img src="images/$R5O4ORZ.JPG" alt="City skyline from above">
+          <figcaption>Superman day</figcaption>
+        </figure>
+
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_2375.JPG" alt="">
+          <figcaption>Chicago nights</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_3760.JPG" alt="">
+          <figcaption>5:00 storm</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_5962.JPG" alt="">
+          <figcaption>Chicagohinge</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_7226.JPG" alt="">
+          <figcaption>Fairy light</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_8557.JPG" alt="">
+          <figcaption>Nolan</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_8132 - Copy.JPG" alt="">
+          <figcaption>Saturn 1B</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_8299 - Copy.JPG" alt="">
+          <figcaption>Huntsville, AL</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_2640.JPG" alt="">
+          <figcaption>The American Analog Set</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_8469.JPG" alt="">
+          <figcaption>Casper</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/IMG_8635 - Copy.JPG" alt="">
+          <figcaption>Concert night</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/$RWZ4I3P.JPG" alt="">
+          <figcaption>Wildflowers</figcaption>
+        </figure>
+        <figure class="photo-slide" aria-hidden="true">
+          <img src="images/$R5O4ORZ.JPG" alt="">
+          <figcaption>Superman day</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:gduazo1331@gmail.com">gduazo1331@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/gdurazo">linkedin.com/in/gdurazo</a></p>
+  </section>
+
+  <footer>
+    <p>© 2026 Gabriel Durazo</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="scripy.js"></script>
+
+</body>
+</html>
