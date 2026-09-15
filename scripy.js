@@ -1,5 +1,33 @@
 const viewer = document.getElementById("jet-engine-viewer");
 
+const timelineSteps = [...document.querySelectorAll(".timeline-step")];
+const projectCards = [...document.querySelectorAll(".project-card")];
+const timelineFill = document.querySelector(".timeline-fill");
+
+function updateTimeline() {
+  if (!timelineSteps.length || !projectCards.length || !timelineFill) return;
+
+  const viewportCenter = window.innerHeight * 0.45;
+  let activeIndex = 0;
+
+  projectCards.forEach((card, index) => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top <= viewportCenter) {
+      activeIndex = index;
+    }
+  });
+
+  timelineSteps.forEach((step, index) => {
+    step.classList.toggle("active", index === activeIndex);
+  });
+
+  const topOffset = 0;
+  const trackHeight = timelineSteps[0].closest(".timeline-track").clientHeight;
+  const fillHeight = ((activeIndex + 1) / timelineSteps.length) * (trackHeight - 8);
+  timelineFill.style.top = `${topOffset}px`;
+  timelineFill.style.height = `${fillHeight}px`;
+}
+
 function addMotionEffects() {
   const animatedItems = document.querySelectorAll(".project-card, .about-photo-frame, .photo-slide");
 
@@ -167,4 +195,7 @@ if ("IntersectionObserver" in window) {
   faders.forEach((fader) => fader.classList.add("visible"));
 }
 
+window.addEventListener("scroll", updateTimeline, { passive: true });
+window.addEventListener("resize", updateTimeline);
+updateTimeline();
 addMotionEffects();
