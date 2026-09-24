@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Gabriel Durazo | Engineering Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260923-2">
 </head>
 
 <body>
@@ -15,6 +18,7 @@
     <nav>
       <h1>Gabriel Durazo</h1>
       <ul>
+        <li><a href="#cad-models">CAD Models</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#photography">Photography</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -45,76 +49,72 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
     <p>Building solutions through design, data, and innovation.</p>
   </section>
 
+  <section id="cad-models" class="cad-section fade-in">
+    <div class="cad-heading">
+      <p class="section-kicker">Selected design work</p>
+      <h2>CAD Models</h2>
+      <p>A closer look at the assemblies, mechanisms, and practice models I have built in SOLIDWORKS.</p>
+    </div>
+
+    <div class="cad-grid">
+      <a class="cad-tile" href="cad-model.html?model=turbo-jet">
+        <img src="images/Jet%20Enginer%20Front%20Angle.png" alt="Turbo Jet Engine CAD model render">
+        <span class="cad-tile-overlay"><strong>Turbo Jet Engine</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=exhaust-assembly">
+        <img src="images/Exhuast%20Assembly.png" alt="Exhaust Assembly CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Exhaust Assembly</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=combustion-stage">
+        <img src="images/Combustion%20Stage.png" alt="Combustion Stage CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Combustion Stage</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=main-axis-assembly">
+        <img src="images/Main%20Axis%20Assembly.png" alt="Main Axis Assembly CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Main Axis Assembly</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=rocket">
+        <img src="images/Rocket.png" alt="Rocket CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Rocket</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=bicycle-wheel">
+        <img src="images/Bicycle%20Wheel.png" alt="Bicycle Wheel CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Bicycle Wheel</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=guitar">
+        <img src="images/Guitar.png" alt="Guitar CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Guitar</strong><small>View model details</small></span>
+      </a>
+      <a class="cad-tile" href="cad-model.html?model=rotor">
+        <img src="images/Rotor%20(Coil%20Wiring).png" alt="Rotor and coil wiring CAD model drawing">
+        <span class="cad-tile-overlay"><strong>Rotor / Coil Wiring</strong><small>View model details</small></span>
+      </a>
+    </div>
+  </section>
+
   <div class="projects-layout">
     <aside class="project-timeline" aria-label="Project timeline">
       <div class="timeline-label">Project Timeline</div>
       <div class="timeline-track">
         <div class="timeline-fill"></div>
-        <button type="button" class="timeline-step active" data-target="turbo-jet">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">Turbo Jet Engine<br><small>4 months</small></span>
-        </button>
-        <button type="button" class="timeline-step" data-target="practice-projects">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">Practice Projects<br><small>2 months</small></span>
-        </button>
-        <button type="button" class="timeline-step" data-target="apogee-sim">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">Apogee Simulation<br><small>3 months</small></span>
-        </button>
-        <button type="button" class="timeline-step" data-target="level1-rocket">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">Level 1 Rocket<br><small>2 months</small></span>
-        </button>
-        <button type="button" class="timeline-step" data-target="irec-rocket">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">IREC Rocket<br><small>Ongoing</small></span>
-        </button>
-        <button type="button" class="timeline-step" data-target="drone">
-          <span class="timeline-dot"></span>
-          <span class="timeline-text">Autonomous Drone<br><small>Planned</small></span>
-        </button>
+        <div class="timeline-months" aria-label="Project months">
+          <button type="button" class="timeline-step active" data-target="level1-rocket"><span class="timeline-dot"></span><span class="timeline-text">Aug 2025</span></button>
+          <button type="button" class="timeline-step" data-target="irec-rocket"><span class="timeline-dot"></span><span class="timeline-text">Dec 2025</span></button>
+          <button type="button" class="timeline-step" data-target="apogee-sim"><span class="timeline-dot"></span><span class="timeline-text">Jan 2026</span></button>
+          <button type="button" class="timeline-step" data-target="drone"><span class="timeline-dot"></span><span class="timeline-text">Future</span></button>
+        </div>
       </div>
     </aside>
 
   <section id="projects" class="projects">
-    <article class="project-card fade-in" data-project="turbo-jet">
-      <h3>Turbo Jet Engine</h3>
-      <div class="project-flex">
-        <div class="project-media">
-          <img src="./images/Jet%20Enginer%20Front%20Angle.png" alt="Turbo Jet Engine Front View">
-          <div id="jet-engine-viewer" class="model-viewer" aria-label="Interactive 3D turbo jet engine model">
-            <p class="model-status">Loading 3D model...</p>
-          </div>
-        </div>
-        <div class="project-description">
-          <p>Designed and modeled a turbojet engine in SOLIDWORKS, analyzing internal flow and mechanical structure. The model includes compressor, combustion, turbine, and nozzle stages, with a variable exhaust cone. This project helped me understand thrust generation, pressure ratios, and the mechanical constraints of rotating assemblies.</p>
-        </div>
-      </div>
-    </article>
-
-    <article class="project-card fade-in" data-project="practice-projects">
-      <h3>Practice Projects</h3>
-      <div class="project-flex">
-        <div class="project-gallery">
-          <img src="images/Bicycle Wheel.jpg" alt="Bicycle Wheel CAD Model">
-          <img src="images/Guitar.jpg" alt="Acoustic Guitar CAD Model">
-          <img src="images/Rotor (Coil Wiring).jpg" alt="Electric Motor CAD Model">
-        </div>
-        <div class="project-description">
-          <p>A collection of practice CAD models created to refine design and rendering skills in SOLIDWORKS. Includes a bicycle wheel assembly, an acoustic guitar, and an electric motor cross-section.</p>
-        </div>
-      </div>
-    </article>
-
     <article class="project-card fade-in" data-project="apogee-sim">
       <h3>Apogee Calculator Simulation</h3>
       <div class="project-flex">
         <div class="project-media">
           <p class="pdf-label">Apogee Model</p>
-          <iframe class="pdf-preview" src="images/ApogeeModel.pdf" title="Apogee calculator model"></iframe>
+          <img class="pdf-preview" src="images/ApogeeModel.png" alt="First page preview of the apogee calculator model">
           <p class="pdf-label">Initial Calculator Code</p>
-          <iframe class="pdf-preview" src="images/Apogee%20code.pdf" title="Initial apogee calculator code"></iframe>
+          <img class="pdf-preview" src="images/Apogee%20code.png" alt="First page preview of the initial apogee calculator code">
           <a class="project-link" href="images/Apogee%20code.pdf" target="_blank" rel="noopener">Open Code PDF in a new tab</a>
         </div>
         <div class="project-description">
@@ -152,7 +152,7 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
       <div class="project-flex">
         <div class="project-media">
           <img src="images/IREQ Data.png" alt="IREC competition rocket data and analysis">
-          <iframe class="pdf-preview" src="images/Open%20Rocket%20Design.pdf" title="OpenRocket IREC competition rocket design"></iframe>
+          <img class="pdf-preview" src="images/Open%20Rocket%20Design.png" alt="First page preview of the OpenRocket IREC competition rocket design">
           <a class="project-link" href="images/Open%20Rocket%20Design.pdf" target="_blank" rel="noopener">Open PDF in a new tab</a>
         </div>
         <div class="project-description">
@@ -166,11 +166,13 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
     </article>
 
     <article class="project-card fade-in" data-project="drone">
-      <h3>Future Engineering Project: Autonomous Drone</h3>
+      <h3>Future Project: Lunar Transportation &amp; Maintenance</h3>
       <div class="project-flex">
-        <div class="project-placeholder" aria-hidden="true">Project image coming soon</div>
+        <div class="project-media">
+          <img src="images/027%20RASC-AL.jpg" alt="Lunar technology concept featuring a moon base and surface transportation systems">
+        </div>
         <div class="project-description">
-          <p>Planned development of an autonomous drone featuring a lightweight composite frame, brushless motor propulsion, PID-based flight control, and onboard sensor fusion.</p>
+          <p>My team and I are hoping to participate in a NASA RASC-AL competition focused on developing transportation infrastructure for the Moon. Our proposed research will explore how lunar mobility systems can support surface operations, remain maintainable in a harsh environment, and contribute to longer-term exploration and resource utilization.</p>
         </div>
       </div>
     </article>
@@ -287,6 +289,14 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
     </div>
   </section>
 
+  <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Expanded photograph" hidden>
+    <button type="button" class="photo-lightbox-close" aria-label="Close expanded photograph">&times;</button>
+    <figure class="photo-lightbox-frame">
+      <img id="photo-lightbox-image" src="" alt="">
+      <figcaption id="photo-lightbox-caption"></figcaption>
+    </figure>
+  </div>
+
 
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
@@ -301,7 +311,7 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="scripy.js"></script>
+  <script src="scripy.js?v=20260923-4"></script>
 
 </body>
 </html>

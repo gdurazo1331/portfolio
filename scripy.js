@@ -1,30 +1,54 @@
 const viewer = document.getElementById("jet-engine-viewer");
 
 const timelineSteps = [...document.querySelectorAll(".timeline-step")];
-const projectCards = [...document.querySelectorAll(".project-card")];
+const projectOrder = ["level1-rocket", "irec-rocket", "apogee-sim", "drone"];
+const projectCards = [...document.querySelectorAll(".project-card")].sort(
+  (firstCard, secondCard) => projectOrder.indexOf(firstCard.dataset.project) - projectOrder.indexOf(secondCard.dataset.project)
+);
 const timelineFill = document.querySelector(".timeline-fill");
 
 function updateTimeline() {
   if (!timelineSteps.length || !projectCards.length || !timelineFill) return;
 
   const viewportCenter = window.innerHeight * 0.45;
-  let activeIndex = 0;
+  let activeCardIndex = 0;
+  let closestDistance = Number.POSITIVE_INFINITY;
 
   projectCards.forEach((card, index) => {
     const rect = card.getBoundingClientRect();
-    if (rect.top <= viewportCenter) {
-      activeIndex = index;
+    const distance = viewportCenter < rect.top
+      ? rect.top - viewportCenter
+      : viewportCenter > rect.bottom
+        ? viewportCenter - rect.bottom
+        : 0;
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      activeCardIndex = index;
     }
   });
 
+  const activeCard = projectCards[activeCardIndex];
+  const project = activeCard ? activeCard.dataset.project : "level1-rocket";
+  const activeIndex = Math.max(0, timelineSteps.findIndex((step) => step.dataset.target === project));
+
   timelineSteps.forEach((step, index) => {
     step.classList.toggle("active", index === activeIndex);
+    const targetCard = document.querySelector(`[data-project="${step.dataset.target}"]`);
+    const targetRect = targetCard ? targetCard.getBoundingClientRect() : null;
+    const distance = targetRect
+      ? viewportCenter < targetRect.top
+        ? targetRect.top - viewportCenter
+        : viewportCenter > targetRect.bottom
+          ? viewportCenter - targetRect.bottom
+          : 0
+      : 1000;
+    const scale = Math.max(0.82, Math.min(1.35, 1.35 - distance / 520));
+    step.style.setProperty("--timeline-scale", scale.toFixed(2));
   });
 
-  const topOffset = 0;
   const trackHeight = timelineSteps[0].closest(".timeline-track").clientHeight;
   const fillHeight = ((activeIndex + 1) / timelineSteps.length) * (trackHeight - 8);
-  timelineFill.style.top = `${topOffset}px`;
+  timelineFill.style.top = "0px";
   timelineFill.style.height = `${fillHeight}px`;
 }
 
@@ -49,6 +73,50 @@ function addMotionEffects() {
     });
   });
 }
+
+function addPhotoLightbox() {
+  const lightbox = document.getElementById("photo-lightbox");
+  const lightboxImage = document.getElementById("photo-lightbox-image");
+  const lightboxCaption = document.getElementById("photo-lightbox-caption");
+  const closeButton = lightbox?.querySelector(".photo-lightbox-close");
+  const photoImages = document.querySelectorAll(".photo-slide img");
+
+  if (!lightbox || !lightboxImage || !lightboxCaption || !closeButton || !photoImages.length) return;
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    lightboxImage.src = "";
+  }
+
+  photoImages.forEach((image) => {
+    image.addEventListener("click", () => {
+      const figure = image.closest(".photo-slide");
+      const caption = figure?.querySelector("figcaption")?.textContent || "";
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || caption;
+      lightboxCaption.textContent = caption;
+      lightbox.hidden = false;
+      document.body.classList.add("lightbox-open");
+      closeButton.focus();
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hidden) closeLightbox();
+  });
+}
+
+timelineSteps.forEach((step) => {
+  step.addEventListener("click", () => {
+    const target = document.querySelector(`[data-project="${step.dataset.target}"]`);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
 
 if (viewer) {
   const missingDependencies = [];
@@ -199,3 +267,4 @@ window.addEventListener("scroll", updateTimeline, { passive: true });
 window.addEventListener("resize", updateTimeline);
 updateTimeline();
 addMotionEffects();
+addPhotoLightbox();

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>CAD Model | Gabriel Durazo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260923-2">
+</head>
+<body class="cad-detail-page">
+  <header>
+    <nav>
+      <h1>Gabriel Durazo</h1>
+      <ul>
+        <li><a href="index.html#cad-models">CAD Models</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#photography">Photography</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cad-detail">
+    <a class="back-link" href="index.html#cad-models">&larr; Back to the CAD gallery</a>
+    <div class="cad-detail-heading">
+      <p class="section-kicker">CAD model study</p>
+      <h2 id="model-title">CAD Model</h2>
+      <p id="model-summary"></p>
+    </div>
+    <div class="cad-detail-layout">
+      <div class="cad-detail-media">
+        <img id="model-image" class="cad-detail-pdf" alt="CAD model drawing">
+        <div id="jet-engine-viewer" class="model-viewer cad-detail-viewer" aria-label="Interactive 3D turbo jet engine model" hidden>
+          <p class="model-status">Loading 3D model...</p>
+        </div>
+      </div>
+      <aside class="cad-detail-notes">
+        <p class="section-kicker">Design notes</p>
+        <p id="model-description"></p>
+        <a id="pdf-link" class="project-link" target="_blank" rel="noopener">Open PDF in a new tab</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Gabriel Durazo</p>
+  </footer>
+
+  <script>
+    const models = {
+      "exhaust-assembly": {
+        title: "Exhaust Assembly",
+        file: "images/Exhuast Assembly.pdf",
+        summary: "A detailed exhaust-side assembly exploring the geometry and fit of a compact propulsion system.",
+        description: "This model focuses on the transition from the engine body to the exhaust hardware. I used it to practice assembly organization, concentric relationships, and communicating a mechanical design through a clear technical drawing."
+      },
+      "turbo-jet": {
+        title: "Turbo Jet Engine",
+        image: "images/Jet Enginer Front Angle.png",
+        summary: "A complete turbojet engine assembly modeled to study propulsion hardware and mechanical structure.",
+        description: "This SOLIDWORKS model includes the compressor, combustion, turbine, and nozzle stages, along with a variable exhaust cone. The project helped me connect thrust-generation concepts with the mechanical constraints of a rotating engine assembly."
+      },
+      "combustion-stage": {
+        title: "Combustion Stage",
+        file: "images/Combustion Stage.pdf",
+        summary: "A combustion-stage concept built around flow paths, containment, and manufacturable geometry.",
+        description: "The combustion stage gave me a way to study how internal volumes and interfaces shape a propulsion component. The model emphasizes sectioned geometry and the relationships between the chamber, surrounding structure, and downstream hardware."
+      },
+      "main-axis-assembly": {
+        title: "Main Axis Assembly",
+        file: "images/Main Axis Assembly.pdf",
+        summary: "An assembly study centered on alignment, support, and rotating components.",
+        description: "This design exercise concentrates on the main axis as the organizing element of the assembly. I worked through the placement of supporting parts and the way each component constrains the next during assembly."
+      },
+      rocket: {
+        title: "Rocket",
+        file: "images/Rocket.pdf",
+        summary: "A rocket design study connecting aerodynamic form with the practical details of construction.",
+        description: "This model explores the proportions and component layout of a rocket body. The drawing brings together the exterior profile, structural sections, and the design decisions that make a concept easier to inspect and communicate."
+      },
+      "bicycle-wheel": {
+        title: "Bicycle Wheel",
+        file: "images/Bicycle Wheel.pdf",
+        summary: "A practice assembly for refining repeated geometry, mates, and radial symmetry.",
+        description: "The bicycle wheel was a focused SOLIDWORKS practice project. Building the wheel from its hub, spokes, rim, and supporting geometry helped me improve pattern features, assembly mates, and the discipline of modeling around a shared axis."
+      },
+      guitar: {
+        title: "Guitar",
+        file: "images/Guitar.pdf",
+        summary: "A form-driven CAD study balancing surface shape, proportion, and visual presentation.",
+        description: "This model was created to practice translating a familiar object into a structured CAD workflow. The work combines larger surface forms with smaller details while keeping the final model readable as both a design object and a technical study."
+      },
+      rotor: {
+        title: "Rotor / Coil Wiring",
+        file: "images/Rotor (Coil Wiring).pdf",
+        summary: "An electric motor practice model focused on nested components and a clear sectional view.",
+        description: "The rotor model helped me explore how an assembly communicates its function through arrangement. The coil wiring and internal components are presented as a sectional design study so the relationships inside the motor remain visible."
+      }
+    };
+
+    const key = new URLSearchParams(window.location.search).get("model");
+    const model = models[key] || models["exhaust-assembly"];
+    const encodedFile = model.file ? encodeURI(model.file) : "";
+    const encodedImage = encodeURI(model.image || model.file.replace(/\.pdf$/i, ".png"));
+
+    document.title = `${model.title} | Gabriel Durazo`;
+    document.getElementById("model-title").textContent = model.title;
+    document.getElementById("model-summary").textContent = model.summary;
+    document.getElementById("model-description").textContent = model.description;
+    const modelImage = document.getElementById("model-image");
+    const modelViewer = document.getElementById("jet-engine-viewer");
+    modelImage.src = encodedImage;
+    modelImage.alt = `${model.title} CAD model drawing`;
+    if (key === "turbo-jet") {
+      modelViewer.hidden = false;
+    } else {
+      modelViewer.remove();
+    }
+    const pdfLink = document.getElementById("pdf-link");
+    if (encodedFile) {
+      pdfLink.href = encodedFile;
+    } else {
+      pdfLink.remove();
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="scripy.js?v=20260923-4"></script>
+</body>
+</html>
