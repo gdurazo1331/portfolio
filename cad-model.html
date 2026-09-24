@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260923-2">
+  <link rel="stylesheet" href="style.css?v=20260923-6">
 </head>
 <body class="cad-detail-page">
   <header>
@@ -40,8 +40,19 @@
         </div>
       </div>
       <aside class="cad-detail-notes">
-        <p class="section-kicker">Design notes</p>
-        <p id="model-description"></p>
+        <p class="section-kicker">Project breakdown</p>
+        <section class="cad-note-block">
+          <h3>What</h3>
+          <p id="model-what"></p>
+        </section>
+        <section class="cad-note-block">
+          <h3>How</h3>
+          <p id="model-how"></p>
+        </section>
+        <section class="cad-note-block">
+          <h3>Why</h3>
+          <p id="model-why"></p>
+        </section>
         <a id="pdf-link" class="project-link" target="_blank" rel="noopener">Open PDF in a new tab</a>
       </aside>
     </div>
@@ -57,49 +68,65 @@
         title: "Exhaust Assembly",
         file: "images/Exhuast Assembly.pdf",
         summary: "A detailed exhaust-side assembly exploring the geometry and fit of a compact propulsion system.",
-        description: "This model focuses on the transition from the engine body to the exhaust hardware. I used it to practice assembly organization, concentric relationships, and communicating a mechanical design through a clear technical drawing."
+        what: "An exhaust-side assembly for a compact propulsion system.",
+        how: "I modeled the transitions and interfaces in SOLIDWORKS, paying attention to concentric relationships, fit, and clear technical presentation.",
+        why: "The project helped me study how propulsion hardware connects as an assembly and how its geometry can be communicated clearly."
       },
       "turbo-jet": {
         title: "Turbo Jet Engine",
         image: "images/Jet Enginer Front Angle.png",
         summary: "A complete turbojet engine assembly modeled to study propulsion hardware and mechanical structure.",
-        description: "This SOLIDWORKS model includes the compressor, combustion, turbine, and nozzle stages, along with a variable exhaust cone. The project helped me connect thrust-generation concepts with the mechanical constraints of a rotating engine assembly."
+        what: "A complete turbojet engine assembly with compressor, combustion, turbine, and nozzle stages.",
+        how: "I designed the assembly in SOLIDWORKS and used an interactive 3D viewer to inspect the rotating hardware, internal structure, and variable exhaust cone.",
+        why: "The project connects thrust-generation concepts with the mechanical constraints that shape a working propulsion system."
       },
       "combustion-stage": {
         title: "Combustion Stage",
         file: "images/Combustion Stage.pdf",
         summary: "A combustion-stage concept built around flow paths, containment, and manufacturable geometry.",
-        description: "The combustion stage gave me a way to study how internal volumes and interfaces shape a propulsion component. The model emphasizes sectioned geometry and the relationships between the chamber, surrounding structure, and downstream hardware."
+        what: "A combustion-stage concept focused on the chamber, surrounding structure, and downstream interfaces.",
+        how: "I developed the sectioned geometry in SOLIDWORKS around the expected flow path, containment needs, and manufacturable interfaces.",
+        why: "The model let me examine how internal volumes and component relationships influence propulsion design."
       },
       "main-axis-assembly": {
         title: "Main Axis Assembly",
         file: "images/Main Axis Assembly.pdf",
         summary: "An assembly study centered on alignment, support, and rotating components.",
-        description: "This design exercise concentrates on the main axis as the organizing element of the assembly. I worked through the placement of supporting parts and the way each component constrains the next during assembly."
+        what: "A rotating main-axis assembly organized around alignment and support components.",
+        how: "I built the parts and assembly relationships in SOLIDWORKS, using the main axis to establish placement and constraints for each supporting component.",
+        why: "The exercise strengthened my understanding of how alignment and assembly constraints affect mechanical performance."
       },
       rocket: {
         title: "Rocket",
         file: "images/Rocket.pdf",
         summary: "A rocket design study connecting aerodynamic form with the practical details of construction.",
-        description: "This model explores the proportions and component layout of a rocket body. The drawing brings together the exterior profile, structural sections, and the design decisions that make a concept easier to inspect and communicate."
+        what: "A rocket body study combining an aerodynamic exterior with structural component layout.",
+        how: "I developed the profile and sections as a technical CAD drawing so the proportions, interfaces, and construction decisions are easy to inspect.",
+        why: "The project helped me connect aerodynamic form with the practical requirements of building and communicating a vehicle."
       },
       "bicycle-wheel": {
         title: "Bicycle Wheel",
         file: "images/Bicycle Wheel.pdf",
         summary: "A practice assembly for refining repeated geometry, mates, and radial symmetry.",
-        description: "The bicycle wheel was a focused SOLIDWORKS practice project. Building the wheel from its hub, spokes, rim, and supporting geometry helped me improve pattern features, assembly mates, and the discipline of modeling around a shared axis."
+        what: "A bicycle wheel assembly made from a hub, spokes, rim, and supporting geometry.",
+        how: "I used radial patterns and assembly mates in SOLIDWORKS to build the wheel around a shared axis.",
+        why: "It gave me focused practice with repeated geometry, symmetry, and relationships between moving assembly components."
       },
       guitar: {
         title: "Guitar",
         file: "images/Guitar.pdf",
         summary: "A form-driven CAD study balancing surface shape, proportion, and visual presentation.",
-        description: "This model was created to practice translating a familiar object into a structured CAD workflow. The work combines larger surface forms with smaller details while keeping the final model readable as both a design object and a technical study."
+        what: "A form-driven acoustic guitar model balancing surface shape, proportion, and detail.",
+        how: "I translated the familiar object into a structured SOLIDWORKS workflow, combining larger forms with smaller modeled details.",
+        why: "The project improved my ability to move from an observed object to a CAD model that is both readable and visually considered."
       },
       rotor: {
         title: "Rotor / Coil Wiring",
         file: "images/Rotor (Coil Wiring).pdf",
         summary: "An electric motor practice model focused on nested components and a clear sectional view.",
-        description: "The rotor model helped me explore how an assembly communicates its function through arrangement. The coil wiring and internal components are presented as a sectional design study so the relationships inside the motor remain visible."
+        what: "An electric motor rotor and coil-wiring study shown through a sectional arrangement.",
+        how: "I organized the nested components and wiring in SOLIDWORKS so the internal relationships remain visible in the drawing.",
+        why: "The model helped me explore how assembly arrangement can communicate the function of a mechanism."
       }
     };
 
@@ -111,7 +138,9 @@
     document.title = `${model.title} | Gabriel Durazo`;
     document.getElementById("model-title").textContent = model.title;
     document.getElementById("model-summary").textContent = model.summary;
-    document.getElementById("model-description").textContent = model.description;
+    document.getElementById("model-what").textContent = model.what;
+    document.getElementById("model-how").textContent = model.how;
+    document.getElementById("model-why").textContent = model.why;
     const modelImage = document.getElementById("model-image");
     const modelViewer = document.getElementById("jet-engine-viewer");
     modelImage.src = encodedImage;
