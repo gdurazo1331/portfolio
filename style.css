@@ -173,6 +173,37 @@ nav a:hover {
   font-size: 1.02rem;
 }
 
+.resume-section {
+  padding: 58px 20px 64px;
+  text-align: center;
+  background: #fff8ed;
+}
+
+.resume-section h2 {
+  margin: 0 0 8px;
+}
+
+.resume-section p:not(.section-kicker) {
+  margin: 0;
+}
+
+.resume-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.resume-link:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
 .projects-layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -950,12 +981,39 @@ footer {
 
 @media (max-width: 700px) {
   .projects-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
   }
 
   .project-timeline {
-    position: relative;
-    top: auto;
+    position: sticky;
+    top: 78px;
+    padding: 14px 8px 18px 6px;
+  }
+
+  .timeline-label {
+    margin-bottom: 14px;
+    padding-left: 14px;
+    font-size: 0.58rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .timeline-track {
+    padding-left: 14px;
+    margin-left: 2px;
+  }
+
+  .timeline-step {
+    gap: 6px;
+    padding-bottom: 14px;
+  }
+
+  .timeline-text {
+    min-height: 82px;
+    font-size: 0.68rem;
   }
 
   nav {
