@@ -1054,4 +1054,50 @@ footer {
     height: 240px;
   }
 
+  .cad-detail {
+    padding: 36px 14px 64px;
+  }
+
+  .cad-detail-heading {
+    margin: 38px 0 24px;
+  }
+
+  .cad-detail-heading h2 {
+    font-size: clamp(2rem, 12vw, 3.4rem);
+  }
+
+  .cad-detail-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .cad-detail-media,
+  .cad-detail-notes {
+    width: 100%;
+  }
+
+  .cad-detail-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cad-detail-media .cad-detail-viewer {
+    order: -1;
+  }
+
+  .cad-detail-media .cad-detail-pdf {
+    min-height: 220px;
+    height: min(72vw, 360px);
+  }
+
+  .cad-detail-viewer {
+    min-height: 300px;
+    height: min(62vh, 480px);
+  }
+
+  .cad-detail-notes {
+    padding: 22px 18px;
+  }
+
 }
