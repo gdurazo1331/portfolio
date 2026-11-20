@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260923-6">
+  <link rel="stylesheet" href="style.css?v=20261119-2">
 </head>
 
 <body>
@@ -21,6 +21,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#cad-models">CAD Models</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#course-curriculum">Course Curriculum</a></li>
         <li><a href="#photography">Photography</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -52,7 +53,7 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
     <p class="section-kicker">Professional profile</p>
     <h2>Resume</h2>
     <p>View my experience, education, and engineering work.</p>
-    <a class="resume-link" href="images/Resume%20SEP%2023%202026.pdf" target="_blank" rel="noopener">View Resume PDF</a>
+    <a class="resume-link" href="images/Resume%20Gabriel%20Durazo.pdf" target="_blank" rel="noopener">View Resume PDF</a>
   </section>
 
   <section id="cad-models" class="cad-section fade-in">
@@ -131,6 +132,7 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
           <button type="button" class="timeline-step active" data-target="level1-rocket"><span class="timeline-dot"></span><span class="timeline-text">Aug 2025</span></button>
           <button type="button" class="timeline-step" data-target="irec-rocket"><span class="timeline-dot"></span><span class="timeline-text">Dec 2025</span></button>
           <button type="button" class="timeline-step" data-target="apogee-sim"><span class="timeline-dot"></span><span class="timeline-text">Jan 2026</span></button>
+          <button type="button" class="timeline-step" data-target="nozzle-analyzer"><span class="timeline-dot"></span><span class="timeline-text">Nov 2026</span></button>
           <button type="button" class="timeline-step" data-target="drone"><span class="timeline-dot"></span><span class="timeline-text">Future</span></button>
         </div>
       </div>
@@ -200,6 +202,25 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
       </div>
     </article>
 
+    <article id="nozzle-analyzer" class="project-card fade-in" data-project="nozzle-analyzer">
+      <h3>Nozzle Analyzer</h3>
+      <div class="project-flex">
+        <div class="project-media">
+          <img class="pdf-preview" src="models/Nozzle%20Analyzer/nozzle-contour.png" alt="Plot of the converging and diverging nozzle contour" loading="lazy">
+          <a class="project-link" href="models/Nozzle%20Analyzer/Nozzle%20Analyzer%20Document.pdf" target="_blank" rel="noopener">View Analysis Report (PDF)</a>
+          <a class="project-link" href="models/Nozzle%20Analyzer/Nozzle_Analyzer.ipynb" download>Download Jupyter Notebook</a>
+          <a class="project-link" href="models/Nozzle%20Analyzer/README.md" download>Download Setup Guide</a>
+        </div>
+        <div class="project-description">
+          <div class="project-breakdown">
+            <section><h4>What</h4><p>A Python notebook that models compressible flow through a converging–diverging nozzle.</p></section>
+            <section><h4>How</h4><p>I used NumPy and Matplotlib to compare an ideal flow model with a model that includes a normal shock, using Pitot pressure measurements to estimate its location.</p></section>
+            <section><h4>Why</h4><p>The comparison shows how a shock changes the flow through the nozzle and its exit conditions.</p></section>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <article class="project-card fade-in" data-project="drone">
       <h3>Future Project: Lunar Transportation &amp; Maintenance</h3>
       <div class="project-flex">
@@ -217,6 +238,51 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
     </article>
   </section>
   </div>
+
+  <section id="course-curriculum" class="curriculum-section" aria-labelledby="curriculum-heading">
+    <h2 id="curriculum-heading">Course Curriculum</h2>
+    <article class="curriculum-report" aria-labelledby="airfoil-report-heading">
+      <div class="curriculum-intro">
+        <div>
+          <p class="section-kicker">MMAE 315 · Aerospace Laboratory</p>
+          <h3 id="airfoil-report-heading">Analysis of a NACA 0012 Airfoil</h3>
+          <p>I tested a symmetric NACA 0012 airfoil in a wind tunnel at about 10 m/s. I used surface-pressure measurements to estimate lift and pressure drag, then compared my results with thin-airfoil theory and published reference data.</p>
+        </div>
+        <a class="resume-link" href="images/Lab9.pdf" target="_blank" rel="noopener">Read the lab report (PDF)</a>
+      </div>
+
+      <div class="curriculum-figures">
+        <figure>
+          <a href="images/airfoil-wind-tunnel.jpeg"><img src="images/airfoil-wind-tunnel.jpeg" alt="NACA 0012 airfoil mounted in the wind tunnel test section" width="1431" height="805" loading="lazy"></a>
+          <figcaption><strong>Wind-tunnel setup.</strong> Pressure taps sampled the upper and lower surfaces as the angle of attack changed.</figcaption>
+        </figure>
+        <figure>
+          <a href="images/airfoil-surface-pressure.jpeg"><img src="images/airfoil-surface-pressure.jpeg" alt="Upper- and lower-surface pressure coefficients plotted along the chord at nine angles of attack" width="1202" height="717" loading="lazy"></a>
+          <figcaption><strong>Surface-pressure distribution.</strong> The chordwise profiles show how the pressure difference changed with angle of attack.</figcaption>
+        </figure>
+        <figure>
+          <a href="images/airfoil-lift-comparison.png"><img src="images/airfoil-lift-comparison.png" alt="Measured lift peaks at 15 degrees and drops at 20 degrees while the thin-airfoil prediction continues to rise" width="1170" height="699" loading="lazy"></a>
+          <figcaption><strong>Lift versus angle of attack.</strong> The highest measured lift coefficient was about 1.10 at 15°, followed by a drop at 20°. The reference curve peaked near 17°.</figcaption>
+        </figure>
+      </div>
+
+      <h4>What I learned</h4>
+      <dl class="curriculum-skills">
+        <div>
+          <dt>Wind-tunnel testing and instrumentation</dt>
+          <dd>I used MATLAB to check tunnel speed and a Scanivalve pressure scanner to collect data at nine angles of attack. Measuring offsets and controlling test conditions are essential to repeatable aerodynamic testing.</dd>
+        </div>
+        <div>
+          <dt>Data reduction and aerodynamic loads</dt>
+          <dd>I corrected pressure offsets, calculated pressure coefficients, and integrated the chordwise data to estimate lift and pressure drag. This connects local sensor readings to the loads engineers use in aerodynamic design.</dd>
+        </div>
+        <div>
+          <dt>Model validation and stall</dt>
+          <dd>I compared the measured lift curve with thin-airfoil theory and published data. The measured curve leveled off while the theory kept rising, showing why engineers check where a model’s assumptions break down before relying on it for performance estimates.</dd>
+        </div>
+      </dl>
+    </article>
+  </section>
 
   <section id="photography" class="photography-section fade-in">
     <div class="photography-heading">
@@ -350,7 +416,7 @@ I enjoy bridging concepts and applications through simulation, testing, and inno
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="scripy.js?v=20260923-4"></script>
+  <script src="scripy.js?v=20261119-1"></script>
 
 </body>
 </html>

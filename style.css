@@ -352,8 +352,16 @@ nav a:hover {
   order: 3;
 }
 
-.projects .project-card[data-project="drone"] {
+.projects .project-card[data-project="nozzle-analyzer"] {
   order: 4;
+}
+
+.projects .project-card[data-project="drone"] {
+  order: 5;
+}
+
+#nozzle-analyzer .project-link {
+  display: table;
 }
 
 .project-card {
@@ -1100,4 +1108,112 @@ footer {
     padding: 22px 18px;
   }
 
+}
+
+
+.curriculum-section {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: clamp(42px, 7vw, 90px) 20px;
+}
+
+.curriculum-section > h2 {
+  margin: 0 0 20px;
+  color: var(--ink);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+}
+
+.curriculum-report {
+  padding: clamp(18px, 4vw, 36px);
+  border: 1px solid #e6d8ca;
+  border-top: 3px solid var(--accent);
+  border-radius: 16px;
+  background: #fffaf3;
+  box-shadow: 0 12px 32px rgba(11, 15, 18, 0.08);
+}
+
+.curriculum-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 24px;
+}
+
+.curriculum-intro > div {
+  flex: 1 1 30rem;
+}
+
+.curriculum-intro h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+}
+
+.curriculum-intro p:last-child {
+  max-width: 66ch;
+  margin: 0;
+}
+
+.curriculum-intro .resume-link {
+  margin: 0;
+}
+
+.curriculum-figures,
+.curriculum-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 20px;
+}
+
+.curriculum-figures {
+  margin: 28px 0 32px;
+}
+
+.curriculum-figures figure {
+  margin: 0;
+}
+
+.curriculum-figures a {
+  display: block;
+  border-radius: 10px;
+}
+
+.curriculum-figures img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: contain;
+  border: 1px solid #e6d8ca;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.curriculum-figures figcaption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.curriculum-report h4 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+
+.curriculum-skills {
+  margin: 0;
+}
+
+.curriculum-skills > div {
+  padding-top: 12px;
+  border-top: 1px solid #e6d8ca;
+}
+
+.curriculum-skills dt {
+  font-weight: 700;
+}
+
+.curriculum-skills dd {
+  margin: 6px 0 0;
+  line-height: 1.6;
 }
