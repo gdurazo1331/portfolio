@@ -1132,6 +1132,10 @@ footer {
   box-shadow: 0 12px 32px rgba(11, 15, 18, 0.08);
 }
 
+.curriculum-report + .curriculum-report {
+  margin-top: 24px;
+}
+
 .curriculum-intro {
   display: flex;
   flex-wrap: wrap;
@@ -1178,7 +1182,8 @@ footer {
   border-radius: 10px;
 }
 
-.curriculum-figures img {
+.curriculum-figures img,
+.curriculum-figures video {
   display: block;
   width: 100%;
   height: auto;
